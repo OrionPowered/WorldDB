@@ -10,11 +10,13 @@ public interface Dimension {
         return dat("raids");
     }
 
-    Optional<byte[]> poi(int x, int z);
-
-    Optional<byte[]> entities(int x, int z);
-
-    Optional<byte[]> chunk(int x, int z);
+    /**
+     * Gets a region from this dimension.
+     * @param x The x coordinate of the chunk.
+     * @param z The z coordinate of the chunk.
+     * @return The region, if it exists.
+     */
+    Optional<Region> region(int x, int z);
 
     enum Type {
         OVERWORLD,
